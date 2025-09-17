@@ -1,0 +1,586 @@
+/**
+ * file: css/css.css
+ * purpose: styling
+ **/
+
+/* Remove whitespace on top of certain browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define variables in the :root */
+ 
+
+/* Use your variables on elements along these lines */
+/*
+:root {
+  --contrast: lime;
+  --backgr: #000;
+}
+
+--- You can use the variables like this ---
+
+ main {
+   color: var(--contrast);
+   background-color: var(--backgr);
+ }
+*/
+
+.hero{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* fuldskærms baggrundsvideo */
+.hero-video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fyld og beskær pænt */
+  z-index: 0;
+}
+
+/* Sørg for at alt overlay ligger OVER videoen */
+.header, .hero-copy, .hero-buttons-left, .hero-buttons-right, .header-icons{
+  position: absolute; /* hvis de ikke allerede er det */
+  z-index: 10;
+}
+
+/* (valgfrit) hvis brugeren har reduceret bevægelse slået til, fald tilbage til billede */
+@media (prefers-reduced-motion: reduce){
+  .hero-video{ display:none; }
+  .hero{ background: url("images/ægtebaggrund.jpg") center/cover no-repeat; }
+}
+
+
+
+
+/* HEADER ligger ovenpå hero */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Burger-menu (venstre) */
+.burger {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Logo i midten */
+.header-logo {
+  position: absolute;
+  left: 50%;
+  top: 1px;
+  transform: translateX(-50%);
+}
+
+.header-logo img {
+  height: 150px; /* justér størrelsen frit */
+  width: auto;
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+}
+
+.header-icons svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header-icons svg:hover {
+  transform: scale(1.2);
+}
+
+/* Typografi – vælg en elegant serif */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.hero-copy {
+  position: absolute;
+  top: 250px;         /* afstand fra toppen – justér efter smag */
+  left: 90px;         /* indrykning fra venstre */
+  max-width: min(1500px, 60vw);
+  z-index: 5;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.25;
+  color: #fff;
+  /* responsiv størrelse: min 28px, helst 4vw, maks 72px */
+  font-size: clamp(30px, 2vw, 72px);
+  /* let skygge for læsbarhed på lys baggrund */
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .hero-copy {
+    top: 90px;
+    left: 24px;
+    right: 24px;
+    max-width: none;
+  }
+  .hero-copy h1 {
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+  }
+}
+
+
+.hero-buttons {
+  margin-top: 40px; /* afstand under teksten */
+  display: flex;
+  gap: 40px;        /* afstand mellem knapperne */
+  flex-wrap: wrap;  /* gør at de kan hoppe ned på små skærme */
+}
+
+/* Fælles stil til begge */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px; /* pill-shape */
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* Udforsk mere */
+.btn-primary {
+  background: rgb(255, 255, 255);
+  color: #b18a5d; /* varm beige/guld-tone */
+  border: none;
+}
+.btn-primary:hover {
+  background: #f7f7f7;
+  transform: scale(1.05);
+}
+
+html, body { margin: 0; }
+
+/* HERO som reference for absolute */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Billedet ligger bag alt andet */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Header/tekst/knapper skal ovenpå billedet */
+.header, .hero-copy, .hero-buttons-left, .hero-buttons-right {
+  position: absolute;
+  z-index: 10;
+}
+
+/* Header øverst */
+.header {
+  top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px;
+}
+
+/* Logo i midten */
+.header-logo { position: absolute; top: 5px; left: 50%; transform: translateX(-50%); }
+.header-logo img { height: 160px; }
+
+/* Overskrift */
+.hero-copy { top: 170px; left: 90px; max-width: 80vw; }
+.hero-copy h1 {
+  margin: 0; color: #fff; text-transform: uppercase; letter-spacing: .12em;
+  font-size: clamp(20px, 3vw, 48px); line-height: 1.3;
+  text-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+
+/* Knapper nederst venstre/højre */
+.hero-buttons-left  { left: 90px;  bottom: 270px; }
+.hero-buttons-right { right: 90px; bottom: 270px; }
+
+/* Knap-stil */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 999px;
+  background: #fff;
+  color: #b18a5d;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease;
+}
+.btn:hover { transform: scale(1.05); background: #f7f7f7; }
+
+/* Sikrer at ikonerne er foran alt */
+.header-icons { position: absolute; top: 20px; right: 20px; display: flex; gap: 20px; z-index: 20; }
+.header-icons svg { width: 24px; height: 24px; stroke: #fff; cursor: pointer; }
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .hero-copy { top: 20px; left: 24px; right: 24px; }
+  .hero-buttons-left  { left: 24px;  bottom: 24px; }
+  .hero-buttons-right { right: 24px; bottom: 24px; }
+}
+
+.color-options {
+  position: absolute;
+  left: 80px;         /* hvor det skal stå */
+  bottom: 240px;       /* afstand fra bunden */
+  display: flex;
+  align-items: center;
+  gap: 8px;           /* afstand mellem tekst og cirkler */
+  z-index: 10;
+}
+
+.color-options .label {
+  color: #fff;        /* teksten hvid */
+  font-size: 14px;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.color-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-circle:hover {
+  transform: scale(1.2);
+}
+
+.product-info {
+  position: absolute;
+  right: 360px;      /* afstand fra højre */
+  top: 50%;         /* ca. midt på billedet */
+  transform: translateY(-50%); /* centrer vertikalt */
+  color: #fff;
+  text-align: left;
+  max-width: 300px; /* hvor bred teksten må være */
+  z-index: 10;
+}
+
+.product-info h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.product-info .price {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.product-info .note {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.feature {
+  text-align: center;         /* centrerer både tekst og billede */
+  padding: 60px 20px;         /* luft omkring sektionen */
+  max-width: 1000px;          /* begrænser hvor bredt indholdet kan blive */
+  margin: 0 auto;             /* centrer sektionen på siden */
+}
+
+.feature h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(24px, 3vw, 40px);  /* responsiv størrelse */
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 40px;        /* afstand ned til billedet */
+  color: #2a2a2a;
+}
+
+.feature img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;        /* runde hjørner som i dit screenshot */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* let skygge */
+}
+
+
+
+
+
+/* —— Sektion layout —— */
+.info-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 10%;
+  box-sizing: border-box;
+}
+
+.info-section.reverse {            /* billedet venstre / tekst højre */
+  flex-direction: row-reverse;
+}
+
+/* —— Tekst —— */
+.info-text {
+  flex: 1;
+  color: #2a2a2a;
+}
+
+.info-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(24px, 3vw, 34px);
+  margin: 0 0 16px 0;
+}
+
+.info-text p {
+  font-size: 140%;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.info-text ul {
+  margin: 12px 0 0 18px;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 150%;
+}
+
+.info-text .note {
+  font-size: 15px;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+/* —— Billede —— */
+.info-image {
+  flex: 1;
+}
+
+.info-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+/* —— Responsiv (mobil) —— */
+@media (max-width: 900px) {
+  .info-section,
+  .info-section.reverse {
+    flex-direction: column;     /* stak: tekst over billede */
+    padding: 48px 6%;
+    gap: 24px;
+  }
+}
+
+
+
+
+/* css til billederne med tekst i siden */
+
+
+
+/* Fælles indryk */
+.container{max-width:1200px;margin:0 auto;padding:64px 6vw;box-sizing:border-box}
+
+/* 2 kolonner + bytte-rækkefølge med .reverse */
+.row{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
+.row.reverse{grid-template-columns:1fr 1.1fr}
+
+/* Billed-/videokort */
+.media-card{border-radius:20px;overflow:hidden}
+.media-card img{display:block;width:100%;height:auto}
+
+/* Video der fylder kortet pænt */
+.media-card--video{position:relative;aspect-ratio:16/9}
+.media-card--video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* Lidt basics (valgfrit) */
+.title{margin:0 0 12px;line-height:1.2}
+.feature-list{margin:0;padding-left:1.2rem}  /* brug native bullets */
+.feature-list li{margin:.5rem 0}
+
+
+
+
+/* gør nederste billede smallere og hold det højrejusteret */
+.col-media--narrow { justify-self: end; }          /* læg det helt til højre */
+.col-media--narrow .media-card { 
+  max-width: 520px;                                 /* vælg din ønskede bredde */
+  width: 100%;
+}
+
+/* du har sikkert dette i forvejen – behold det */
+.media-card img { width: 100%; height: auto; display: block; }
+
+
+
+/* nederste billede smallere og højrejusteret */
+.col-media--narrow{
+  max-width: 520px;   /* vælg størrelse (fx 480/520/600) */
+  width: 100%;
+  justify-self: end;  /* læg den helt til højre i grid */
+}
+.col-media--narrow .media-card{ width: 100%; }  /* billedkort fylder kun kolonnens max */
+
+/* mobil: lad billedet blive fuld bredde igen */
+@media (max-width: 900px){
+  .col-media--narrow{ max-width: none; justify-self: stretch; }
+
+
+}
+
+
+/* billede og tekst med højttaler */
+
+
+.col-text{ 
+  position: relative; 
+  z-index: 2; 
+  color:#2e2e2e;
+  font-size: 140%;
+}
+.col-media{ position: relative; z-index: 1; }
+
+
+.col-text h2{ margin:0 0 12px; line-height:1.2; }
+.col-text p{ margin:0 0 12px; line-height:1.6; }
+.col-text ul{ margin:12px 0 0 18px; padding:0; }
+.col-text li{ margin: .5rem 0; }
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: #d9cbbf; /* samme farve som dit screenshot */
+  color: white;
+  padding: 40px 20px;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* gør den mobilvenlig */
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.newsletter {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.newsletter button {
+  padding: 10px 16px;
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background: #f1f1f1;
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

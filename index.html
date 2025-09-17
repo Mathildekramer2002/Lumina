@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LuminaAudio</title>
+
+
+  <!-- FAVICONS -->
+  <link rel="icon" href="favicon-v2.ico.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+
+  
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+
+
+
+
+
+<!-- video med højtaler-->
+
+
+
+<section class="hero">
+  <video class="hero-video" autoplay muted playsinline loop
+         preload="auto"
+         poster="images/ægtebaggrund.jpg">
+    <source src="herovideo.mp4" type="video/mp4">
+    <source src="herovideo.mp4" type="video/webm">
+    Din browser understøtter ikke video.
+  </video>
+</section>
+
+
+
+<script>
+  const v = document.querySelector('.hero-video');
+  if (v) {
+    v.muted = true; // ekstra sikkerhed
+    v.play().catch(() => {
+      const tryPlay = () => { v.muted = true; v.play(); };
+      window.addEventListener('pointerdown', tryPlay, { once: true });
+    });
+  }
+</script>
+
+
+  <!-- HEADER -->
+  <header class="header">
+    <button class="burger">☰ Menu</button>
+    <div class="header-logo"><img src="images/logo.png" alt="Logo"></div>
+    <div class="header-icons"><!-- … dine 3 SVG-ikoner … --></div>
+  </header>
+
+
+
+  <!-- OVERSKRIFT -->
+  <div class="hero-copy">
+    <h1>HELT NYT STILRENT DESIGN FRA LUMINA<br> AUDIO.</h1>
+  </div>
+
+  <!-- KNAPPER: venstre/højre -->
+  <div class="hero-buttons-left">
+    <a href="#" class="btn">Udforsk mere</a>
+  </div>
+  <div class="hero-buttons-right">
+    <a href="#" class="btn">Køb nu</a>
+  </div>
+</section>
+
+  
+  </h1>
+</div>
+
+<div class="color-options">
+  <span class="label">Fås i flere farver:</span>
+  <span class="color-circle" style="background:#8abf7b"></span>
+  <span class="color-circle" style="background:#c07bbf"></span>
+  <span class="color-circle" style="background:#bfa47b"></span>
+  <span class="color-circle" style="background:#d9d9d9"></span>
+</div>
+
+
+<div class="product-info">
+  <h2>LUMINA One</h2>
+  <p class="price">Kun 1995kr,-</p>
+  <p class="note">*Gælder kun studerende fra d. 25/8 - 1/9</p>
+</div>
+
+  </header>
+</section>
+
+
+  <!-- Højre side (dine 3 ikoner) -->
+  <div class="header-icons">
+    <!-- Bruger -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" width="24" height="24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4
+      1.79-4 4 1.79 4 4 4zM6 20c0-2.21 3.58-4 6-4s6 1.79 6 4v1H6v-1z" />
+    </svg>
+
+    <!-- Lokation -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" width="24" height="24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.657 0 3-1.343
+      3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M12 22s8-8.5 8-13a8 8 0 10-16 0c0 4.5 8 13 8 13z" />
+    </svg>
+
+    <!-- Kurv -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" width="24" height="24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M6 9l1.5 9h9L18 9H6zM9 9V6a3 3 0 016 0v3" />
+    </svg>
+  </div>
+</header>
+
+
+  <main>
+
+
+
+
+<article class="feature">
+  <h2>‘ Din musik: Dit øjeblik: ’<br>Din speaker</h2>
+
+  <figure class="media-card media-card--video">
+    <video autoplay loop playsinline
+           poster="images/2-poster.jpg">   <!-- valgfri fallback-plakat -->
+      <source src="reklame.mp4" type="video/mp4">
+      Din browser understøtter ikke video-tagget.
+    </video>
+  </figure>
+</article>
+
+  
+
+</article>
+
+<!-- Video af højtaler nr. 1-->
+<section class="container">
+    <div class="row">
+      <div class="col col-text">
+        <h2 class="title title--sm">‘ Krystalklar lydoplevelse ’</h2>
+        <p><strong>LUMINA One</strong> er en bærbar Bluetooth-højttaler, designet som en fusion af skandinavisk
+          elegance og kraftfuld lydteknologi.</p>
+        <ul class="bullets">
+          <li><strong>Vægt:</strong> Kun 4,5 kg – nem at tage med i hånden eller i den medfølgende stof-tote bag.</li>
+          <li><strong>Batteritid:</strong> Op til 18 timers spilletid – genopladeligt batteri via USB-C.</li>
+        </ul>
+      </div>
+
+      <div class="col col-media">
+        <!-- Video-card (ingen controls; tilføj "controls" hvis du vil vise dem) -->
+        <figure class="media-card media-card--video">
+          <video autoplay muted loop playsinline
+                 poster="images/speaker-exploded-poster.jpg">
+            <source src="dele 1.mp4" type="video/mp4">
+            Din browser understøtter ikke video-tagget.
+          </video>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- billede af højtaler nr. 2-->
+<section class="info-section reverse">
+ <div class="info-text">
+    <h2>‘ Ingen bekymringer ’</h2>
+    <p><strong>IPX5 vandafvisende</strong> – din musik spiller videre, selv når det drypper. Beskyttet mod
+      vandstråler fra alle retninger.</p>
+    <p class="note">*Ikke vandtæt – må ikke nedsænkes i vand (ingen svømmeture eller badekar)*</p>
+  </div>
+
+  <div class="info-image">
+    <img src="images/højttalervamd.png" alt="Lumina vandafvisende">
+  </div>  
+</section>
+
+
+
+
+<!-- billede af højtaler, nr. 3-->
+<section class="container">
+  <div class="row">
+    <div class="col col-text">
+      <h2 class="title title--lg">“Mere end lyd – skab<br>stemning med lys.”</h2>
+      <ul class="feature-list">
+        <li><strong>Flere lysmodes:</strong> Chill, Party, Sunset (og evt. Nightlight)</li>
+        <li><strong>Dynamisk farveskift</strong> i takt med musikken (beat-sync mode)</li>
+        <li><strong>Justerbar lysstyrke</strong> (trinvis eller stepless via app/knapper)</li>
+        <li><strong>RGB LED-teknologi</strong> – med millioner af farver</li>
+        <li><strong>Lavt strømforbrug</strong> – optimeret til lange spilletider</li>
+        <li><strong>Blød diffusion</strong> for behagelig stemningsbelysning</li>
+      </ul>
+    </div>
+
+    <div class="col col-media col-media--narrow">
+      <figure class="media-card">
+        <img src="images/3.png" alt="">
+      </figure>
+    </div>
+  </div>
+</section>
+
+
+
+
+    
+  </main>
+  <script src="js/js.js"></script>
+</body>
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Venstre kolonne -->
+    <div class="footer-left">
+      <p>Skriv dig op, og få eksklusive tilbud direkte i din indbakke</p>
+      <form class="newsletter">
+        <input type="email" placeholder="E-MAIL" required>
+        <button type="submit">Tilmeld</button>
+      </form>
+    </div>
+
+    <!-- Midterste kolonne -->
+    <div class="footer-middle">
+      <h4>Følg os her</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com"><img src="images/insta.webp" alt="Instagram"></a>
+        <a href="https://www.facebook.com/?stype=lo&flo=1&deoia=1&jlou=Affd2SJAd6OEnmk7daW-dnf57DpAtyS7vYbtv6cYOurPO0AfUoDnMH3u3q_unD3BIOrZYBnpUMs9yFlQ5MHZdgICXPAlp5F_Tjy1cDLD_BVUTA&smuh=25573&lh=Ac9nQf_fIgY2jhbA2bo"><img src="images/face.png" alt="Facebook"></a>
+      </div>
+    </div>
+
+    <!-- Højre kolonne -->
+    <div class="footer-right">
+      <h4>Kontakt os</h4>
+      <p>tlf: +45 12345678</p>
+      <p>mail: info@lumina.dk</p>
+    </div>
+
+  </div>
+</footer>
+
+</html>
+
+
+
+
+
